@@ -25,10 +25,10 @@
             </a>
         </div>
         <label for="menu-control" class="menu-btn d-block position-absolute cursor-pointer">
-            <span class="menu-txt d-flex text-white">選單</span>
+            <span class="menu-txt d-flex text-white opacity-0">選單</span>
         </label>
         <nav class="nav-bar color-gray position-absolute d-flex">
-            <ul class="menu-block d-flex w-100">
+            <ul class="menu-block d-flex flex-column w-100">
                 <li class="menu-row text-center"><a title="Item 1" class="menu-link d-block py-24" href="#">Item 1</a>
                 </li>
                 <li class="menu-row text-center"><a title="Item 2" class="menu-link d-block py-24" href="#">Item 2</a>
@@ -42,17 +42,21 @@
     </div>
 
     <!-- main-txt -->
-    <h1 class="main-txt color-light-blue fs-40 fw-bold text-center py-100">Welcome Message</h1>
+    <div class="container-fluid color-light-blue">
+        <div class="container">
+            <h1 class="main-txt fs-40 fw-bold text-center py-100">Welcome Message</h1>
+        </div>
+    </div>
 
     <!-- content -->
     <div class="container pt-24 pb-20">
         <h3 class="fw-bold fs-28 text-center mb-24">Section Title</h3>
 
-        <ul class="d-flex content mb-20">
-            <li class="content-box box-1 text-center color-dark-blue pt-12">Content Box 1</li>
-            <li class="content-box box-2 text-center color-dark-blue pt-12">Content Box 2</li>
-            <li class="content-box box-3 text-center color-dark-blue pt-12">Content Box 3</li>
-            <li class="content-box box-4 text-center color-dark-blue pt-12">Content Box 4</li>
+        <ul class="content d-flex flex-wrap mb-20">
+            <li class="content-box box-1 w-100 text-center color-dark-blue pt-12 mb-16">Content Box 1</li>
+            <li class="content-box box-2 w-100 text-center color-dark-blue pt-12 mb-16">Content Box 2</li>
+            <li class="content-box box-3 w-100 text-center color-dark-blue pt-12 mb-16">Content Box 3</li>
+            <li class="content-box box-4 w-100 text-center color-dark-blue pt-12 mb-0">Content Box 4</li>
         </ul>
         <div class="text-center">
             <button class="btn-action color-action cursor-pointer px-12 py-20" type="button">Call to Action</button>

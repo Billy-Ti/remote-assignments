@@ -23,14 +23,12 @@
         0 -8px 0 #000;
 }
 
-.menu-txt {
-    opacity: 0;
-}
-
 .menu-control {
     z-index: -20;
 }
 
+
+/* nav-bar position */
 .nav-bar {
     width: 100%;
     height: calc(100vh - 40px);
@@ -42,10 +40,6 @@
 .menu-link {
     border-bottom: 1px solid #ffffff;
     transition: all .3s;
-}
-
-.menu-block {
-    flex-direction: column;
 }
 
 .menu-control:checked~.header .nav-bar {
@@ -95,18 +89,11 @@
 }
 
 /* content */
-.content {
-    flex-wrap: wrap;
-}
+
 
 .content-box {
-    width: 100%;
+    /* custom */
     height: 130px;
-    margin-bottom: 16px;
-}
-
-.box-4 {
-    margin-bottom: 0;
 }
 
 .btn-action {

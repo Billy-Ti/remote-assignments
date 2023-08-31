@@ -23,6 +23,14 @@
     display: flex;
 }
 
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
 .justify-content-between {
     justify-content: space-between;
 }
@@ -141,6 +149,10 @@
     margin-right: 16px;
 }
 
+.mb-0 {
+    margin-bottom: ;
+}
+
 .mb-16 {
     margin-bottom: 16px;
 }
@@ -167,4 +179,10 @@
 /* cursor */
 .cursor-pointer {
     cursor: pointer;
+}
+
+/* opacity */
+
+.opacity-0 {
+    opacity: 0;
 }
