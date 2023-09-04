@@ -1,1 +1,1 @@
-# [remote-assignments](https://billy-ti.github.io/remote-assignments/week1/)
+# [remote-assignments](https://billy-ti.github.io/remote-assignments/week2/)
