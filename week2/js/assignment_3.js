@@ -13,7 +13,7 @@ function calculate(data) {
     // console.log(discountNum);
     // console.log(product);
 
-    // 3. 建立總金額初始值為 0
+    // 3. 總金額初始值先設定為 0
     let totalPrice = 0;
 
     // 4. 對獲取的陣列進行循環操作

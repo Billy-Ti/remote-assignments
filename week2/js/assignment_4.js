@@ -46,15 +46,11 @@ btnAction.addEventListener('click', () => {
     // 並且將多個 block 陣列做循環，並 display 顯示出來
     if (actionState) {
         btnAction.classList.add('mb-20');
-        moreBlock.forEach((moreBlock) => {
-            moreBlock.style.display = "block";
-        })
+        moreBlock.forEach((moreBlock) => { moreBlock.style.display = "block"; })
     }
     else {
         btnAction.classList.remove('mb-20');
-        moreBlock.forEach((moreBlock) => {
-            moreBlock.style.display = "none";
-        })
+        moreBlock.forEach((moreBlock) => { moreBlock.style.display = "none"; })
     }
     // 更改點擊狀態，若為已點擊狀態 true，則改為 false
     actionState = !actionState;
