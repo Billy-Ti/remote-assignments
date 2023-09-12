@@ -1,7 +1,7 @@
 {
   "name": "myapp",
   "version": "1.0.0",
-  "description": "This is a pre-exercise for creating an express.",
+  "description": "This is a precursor to the creation of express",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
