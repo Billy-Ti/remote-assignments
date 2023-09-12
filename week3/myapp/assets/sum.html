@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='zh-Hant-TW'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="inputBlock">
+        <label style="color: #999; font-size: 32px;" for="inputNumber">請輸入欲連加法的數字</label>
+        <input style="padding: 20px; font-size: 28px;" id="inputNumber" type="text" name="inputNumber"
+            placeholder="ex : 10 , result = 55">
+        <button style="padding: 20px; font-size: 28px;" id="btn" type="button">提交</button>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // 獲取 input、button、result 的 DOM 元素
+            const numberInput = document.querySelector("#inputNumber");
+            const calculateButton = document.querySelector("#btn");
+            const resultElement = document.querySelector("#result");
+
+            calculateButton.addEventListener("click", () => {
+                let number = numberInput.value;
+
+                // 發送 AJAX 到 API 去
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET", `http://localhost:3000/getData?number=${number}`, true);
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        // 200 表示請求成功
+                        if (xhr.status === 200) {
+                            resultElement.innerHTML = xhr.responseText;
+                        } else {
+                            resultElement.textContent = "Error: 無法獲取 API　數據";
+                        }
+                    }
+                };
+                xhr.send();
+            });
+        });
+
+    </script>
+</body>
+
+</html>
