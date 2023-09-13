@@ -1,7 +1,7 @@
 const express = require('express');               // 用 require 載入 express 套件
 const path = require('path');
 const app = express();                            // 呼叫 express 產生應用程式物件
-const port = 3000;                                // 設置端口為 3000，相當於 http://localhost:3000/       
+const port = process.env.PORT || 3000;                                // 設置端口為 3000，相當於 http://localhost:3000/       
 app.use(express.static('assets'));
 
 // 建立 express 靜態文件資夾，來可以使用 http://localhost:3000/sum.html
