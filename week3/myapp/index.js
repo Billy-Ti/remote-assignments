@@ -2,13 +2,13 @@ const express = require('express');               // 用 require 載入 express 
 const path = require('path');
 const app = express();                            // 呼叫 express 產生應用程式物件
 const port = process.env.PORT || 3000;                                // 設置端口為 3000，相當於 http://localhost:3000/       
-app.use(express.static('assets'));
+// app.use(express.static('myapp/assets'));
 
 // 建立 express 靜態文件資夾，來可以使用 http://localhost:3000/sum.html
 
 // const absolutePath = path.join(__dirname, 'assets', 'calcSum.js');
 
-app.use('/static', express.static(path.join(__dirname, 'assets')));
+app.use(express.static(path.join(__dirname, 'assets')));
 
 // 測試 Google 圖片: http://localhost:3000/images/googlelogo_color_272x92dp.png 資料來源為 Google
 
