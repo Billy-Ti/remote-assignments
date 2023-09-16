@@ -1,16 +1,23 @@
-const express = require('express');               // 用 require 載入 express 套件
+// 用 require 載入 express 套件
+const express = require('express');
+
+// 引入 path 模組
 const path = require('path');
-const app = express();                            // 呼叫 express 產生應用程式物件
-const port = process.env.PORT || 3000;                                // 設置端口為 3000，相當於 http://localhost:3000/       
-// app.use(express.static('myapp/assets'));
 
+// 呼叫 express 產生應用程式物件
+const app = express();
+
+// 設置端口為 3000，或找不到 3000 時系統替換為環境端口，相當於 http://localhost:3000/    
+const port = process.env.PORT || 3000;
+
+// 載入 cookie 
+const cookieParser = require('cookie-parser')
+
+// 測試 Google 圖片路徑: http://localhost:3000/images/googlelogo_color_272x92dp.png 資料來源為 Google
 // 建立 express 靜態文件資夾，來可以使用 http://localhost:3000/sum.html
-
-// const absolutePath = path.join(__dirname, 'assets', 'calcSum.js');
-
 app.use(express.static(path.join(__dirname, 'assets')));
-
-// 測試 Google 圖片: http://localhost:3000/images/googlelogo_color_272x92dp.png 資料來源為 Google
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 // 使用 get 方法與伺服器互動，req 為使用者請求、res 為伺服器的回應
 app.get('/', (req, res) => {
@@ -45,11 +52,43 @@ app.get('/getData', (req, res) => {
     */
     else {
         const result = calcSum(number);
-        res.send(`<h1>1 + 2 + .... + ${number} = ${result}</h1>`);
+        res.send(`輸入數字為 ${number}，結果為 ${result}</h1>`);
     }
 })
 
-// 設置連加法函式
+// 針對 /myName 路由發請求，處理拿到的 userName
+app.get('/myName', (req, res) => {
+    const userName = req.cookies.userName;
+
+    if (userName) {
+        res.send(`<h1>Hi , ${userName} !</h1>`);
+    } else {
+        res.send(`
+            <form action="/trackName" method="post">
+                <input type="text" name="name" placeholder="Enter your name" />
+                <button type="submit">Submit</button>
+            </form>
+        `);
+    }
+});
+
+app.post('/trackName', (req, res) => {
+    const userName = req.body.name;
+
+    // 檢查 userName 是否存在且不能不輸入
+    if (userName && userName.trim() !== "") {
+        // 如果滿足，就將 username 存起來
+        res.cookie('userName', userName);
+
+        // 重新導回 myname
+        res.redirect('/myName');
+    } else {
+        // 如果 userName 不存在或為空也導回 myname 重新輸入
+        res.redirect('/myName');
+    }
+});
+
+// 建立連加法函式
 function calcSum(number) {
     let sum = 0;
     for (let i = 0; i <= number; i++) {

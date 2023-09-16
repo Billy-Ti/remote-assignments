@@ -5,7 +5,7 @@
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Document</title>
+    <title>Assignment week3</title>
 </head>
 
 <body>
@@ -15,6 +15,7 @@
         <input style="padding: 20px; font-size: 28px;" id="inputNumber" type="text" name="inputNumber"
             placeholder="ex : 10 , result = 55">
         <button style="padding: 20px; font-size: 28px;" id="btn" type="button">提交</button>
+        <button style="padding: 20px; font-size: 28px;" type="button" id="clearCookie">Clear Cookie</button>
 
         <div id="result" class="result"></div>
     </div>
@@ -29,7 +30,7 @@
             calculateButton.addEventListener("click", () => {
                 let number = numberInput.value;
 
-                // 發送 AJAX 到 API 去
+                // 發送 AJAX 到 API 
                 const xhr = new XMLHttpRequest();
                 xhr.open("GET", `http://localhost:3000/getData?number=${number}`, true);
 
@@ -45,6 +46,16 @@
                 };
                 xhr.send();
             });
+        });
+
+        // 設定清除 cookie 的 button
+        const clearCookieButton = document.querySelector('#clearCookie');
+
+        clearCookieButton.addEventListener('click', () => {
+            // 清除名為 'userName' 的 cookie
+            document.cookie = 'userName=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            // 刷新頁面，用以確認 cookie 被清除了
+            location.reload(); // 刷新頁面
         });
 
     </script>
