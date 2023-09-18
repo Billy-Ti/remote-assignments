@@ -37,7 +37,7 @@
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState === XMLHttpRequest.DONE) {
                         // 200 表示請求成功
-                        if (xhr.status === 200) {
+                        if (xhr.status === 200 || 304) {
                             resultElement.innerHTML = xhr.responseText;
                         } else {
                             resultElement.textContent = "Error: 無法獲取 API　數據";
