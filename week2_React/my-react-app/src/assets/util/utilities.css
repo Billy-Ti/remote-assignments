@@ -1,0 +1,196 @@
+.container {
+    max-width: 1200px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 0 auto;
+}
+
+/* width */
+.w-100 {
+    width: 100%;
+}
+
+/* display、flex */
+.d-block {
+    display: block;
+}
+
+.d-none {
+    display: none;
+}
+
+.d-inline-block {
+    display: inline-block;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+/* color setting */
+.color-gray {
+    background-color: #aaaaaa;
+}
+
+.color-light-gray {
+    background-color: #EEEEEE;
+}
+
+.color-light-blue {
+    background-color: #CCDDEE;
+}
+
+.color-dark-blue {
+    background-color: #8899AA;
+}
+
+.color-action {
+    background-color: #DDEEFF;
+}
+
+.color-black {
+    background-color: #000000;
+}
+
+/* text align */
+.text-center {
+    text-align: center;
+}
+
+/* text color */
+.text-white {
+    color: #ffffff;
+}
+
+/* font-size */
+.fs-40 {
+    font-size: 40px;
+    /* h1 */
+}
+
+.fs-28 {
+    font-size: 28px;
+    /* h3 */
+}
+
+/* font-weight */
+.fw-bold {
+    font-weight: bold;
+}
+
+/* spacing */
+.px-12 {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.px-30 {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.py-12 {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.py-20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.py-24 {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.ps-24 {
+    padding-left: 24px;
+}
+
+.pt-12 {
+    padding-top: 12px;
+}
+
+.pt-24 {
+    padding-top: 24px;
+}
+
+.pb-20 {
+    padding-bottom: 20px;
+}
+
+.py-100 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.me-4 {
+    margin-right: 4px;
+}
+
+.me-16 {
+    margin-right: 16px;
+}
+
+.mb-0 {
+    margin-bottom: ;
+}
+
+.mb-16 {
+    margin-bottom: 16px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-24 {
+    margin-bottom: 24px;
+}
+
+.mx-autp{
+    margin: 0 auto;
+}
+
+
+
+/* position */
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+/* cursor */
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* opacity */
+
+.opacity-0 {
+    opacity: 0;
+}
